@@ -167,24 +167,28 @@
 
     .intro-strip {
       display: grid;
-      grid-template-columns: 1fr auto;
       align-items: center;
       gap: 30px;
       padding: 27px 0;
       border-block: 1px solid var(--line);
     }
     .intro-strip p { margin: 0; color: #59615b; font-size: 14px; line-height: 1.7; }
-    .intro-strip strong { color: var(--ink); font-weight: 600; }
-    .school-tags { display: flex; gap: 8px; }
-    .school-tags span {
-      padding: 9px 13px;
-      border: 1px solid #d8ddd2;
-      border-radius: 2px;
-      color: var(--green-dark);
+    .senai-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-inline: 4px;
+      padding: 7px 11px;
+      border-radius: 3px;
+      background: var(--green);
+      color: white;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: .09em;
+      text-decoration: none;
+      vertical-align: middle;
+      transition: background .2s ease, transform .2s ease;
     }
+    .senai-button:hover { transform: translateY(-1px); background: var(--green-dark); }
 
     section.content-section { padding-block: 100px; }
     .section-heading {
@@ -238,12 +242,36 @@
     }
     .course-hours strong { color: var(--green-dark); font-size: 12px; }
     .total-hours {
-      margin: 19px 0 0;
+      margin: 0;
       color: var(--muted);
       font-size: 12px;
       text-align: right;
     }
     .total-hours strong { color: var(--green-dark); }
+    .courses-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .flight-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border: 1px solid var(--green);
+      border-radius: 3px;
+      background: var(--green);
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .flight-cta:hover { transform: translateY(-2px); background: var(--green-dark); }
+    .flight-cta svg { width: 18px; height: 18px; flex: none; }
 
     .about-section {
       padding: 77px 0;
@@ -354,11 +382,7 @@
     </section>
 
     <div class="wrap intro-strip" aria-label="Resumo acadêmico">
-      <p><strong>1º ano do Ensino Médio</strong> &nbsp;·&nbsp; Formação em Tecnologia Básica</p>
-      <div class="school-tags" aria-label="Instituições de formação">
-        <span>AFESU</span>
-        <span>SENAI</span>
-      </div>
+      <p>Cursos realizados na AFESU Morro Velho, em parceria com <a class="senai-button" href="https://www.sp.senai.br/unidade/leopoldina/" target="_blank" rel="noopener noreferrer">SENAI <span aria-hidden="true">↗</span></a>.</p>
     </div>
 
     <section class="wrap content-section" id="formacao" aria-labelledby="formacao-title">
@@ -399,7 +423,13 @@
           <div class="course-hours"><span>Formação</span><strong>40 horas</strong></div>
         </article>
       </div>
-      <p class="total-hours">Carga horária total dos cursos: <strong>140 horas</strong></p>
+      <div class="courses-footer">
+        <a class="flight-cta" href="https://www.sp.senai.br/unidade/leopoldina/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 14.2 10l6.3 3.2v2l-6.3-1.6v5.1l2.2 1.5v1.2L12 20.2l-4.4 1.2v-1.2l2.2-1.5v-5.1l-6.3 1.6v-2L9.8 10 12 2.5Z"/></svg>
+          Saiba mais sobre SENAI
+        </a>
+        <p class="total-hours">Carga horária total dos cursos: <strong>140 horas</strong></p>
+      </div>
     </section>
 
     <section class="about-section" id="sobre" aria-labelledby="sobre-title">
